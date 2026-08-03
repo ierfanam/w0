@@ -13,7 +13,9 @@
     "tsc": "tsc",
     "electron:dev": "vite",
     "builds": "vite build",
-    "postinstall": "electron-rebuild -f -w node-pty --arch=x64 && vite build && electron-builder install-app-deps"
+    "postinstall": "electron-rebuild -f -w node-pty --arch=x64 && vite build && electron-builder install-app-deps",
+    "build:linux": "cross-env ELECTRON=true vite build && electron-builder --linux AppImage --x64 --config electron-builder.json",
+    "build:desktop": "cross-env ELECTRON=true vite build && electron-builder --config electron-builder.json"
   },
   "main": "dist-electron/main.js",
   "dependencies": {

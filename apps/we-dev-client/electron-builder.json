@@ -43,6 +43,16 @@
       "zip"
     ]
   },
+  "linux": {
+    "icon": "config/icon-512.png",
+    "target": [
+      {
+        "target": "AppImage",
+        "arch": ["x64"]
+      }
+    ],
+    "category": "Development"
+  },
   "extraResources": [
     {
       "from": "/bin/zsh",
