@@ -1,6 +1,7 @@
 import { authService } from "@/api/auth"
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
+import { FREE_ACCESS_ENABLED, createFreeAccessUser, withFreeAccessQuota } from "@/utils/freeAccess"
 
 export enum TierType {
   FREE = "free",
@@ -56,9 +57,9 @@ interface UserState {
 const useUserStore = create<UserState>()(
   persist(
     (set, get) => ({
-      user: null,
+      user: FREE_ACCESS_ENABLED ? createFreeAccessUser() : null,
       token: null,
-      isAuthenticated: false,
+      isAuthenticated: FREE_ACCESS_ENABLED,
       rememberMe: false,
       isLoginModalOpen: false,
       isLoading: false,
@@ -76,8 +77,8 @@ const useUserStore = create<UserState>()(
         }
 
         set(() => ({
-          user,
-          isAuthenticated: !!user,
+          user: user && FREE_ACCESS_ENABLED ? withFreeAccessQuota(user) : user,
+          isAuthenticated: FREE_ACCESS_ENABLED || !!user,
         }))
       },
 
@@ -91,6 +92,11 @@ const useUserStore = create<UserState>()(
       },
 
       fetchUser: async () => {
+        if (FREE_ACCESS_ENABLED && !localStorage.getItem("token")) {
+          const freeUser = createFreeAccessUser()
+          set(() => ({ user: freeUser, isAuthenticated: true, isLoading: false }))
+          return freeUser
+        }
         set(() => ({ isLoading: true }))
         try {
           const token = localStorage.getItem("token")
@@ -105,9 +111,9 @@ const useUserStore = create<UserState>()(
               document.cookie =
               "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure=true;";
               set(() => ({
-                user: null,
+                user: FREE_ACCESS_ENABLED ? createFreeAccessUser() : null,
                 token: null,
-                isAuthenticated: false,
+                isAuthenticated: FREE_ACCESS_ENABLED,
                 rememberMe: false,
               }))
             } else {
@@ -120,6 +126,11 @@ const useUserStore = create<UserState>()(
         } finally {
           set(() => ({ isLoading: false }))
         }
+        const freeUser = createFreeAccessUser()
+        if (FREE_ACCESS_ENABLED) {
+          set(() => ({ user: freeUser, isAuthenticated: true }))
+        }
+        return freeUser
       },
 
       login: (user, token) => {
@@ -127,7 +138,7 @@ const useUserStore = create<UserState>()(
         localStorage.setItem("token", token)
 
         set(() => ({
-          user,
+          user: FREE_ACCESS_ENABLED ? withFreeAccessQuota(user) : user,
           token,
           isAuthenticated: true,
           isLoginModalOpen: false,
@@ -149,16 +160,16 @@ const useUserStore = create<UserState>()(
           fetch('/api/logout')
         }
         set(() => ({
-          user: null,
+          user: FREE_ACCESS_ENABLED ? createFreeAccessUser() : null,
           token: null,
-          isAuthenticated: false,
+          isAuthenticated: FREE_ACCESS_ENABLED,
           rememberMe: false,
         }))
       },
 
       updateUser: (userData) =>
         set((state) => {
-          const newUser = state.user ? { ...state.user, ...userData } : null
+          const newUser = state.user ? (FREE_ACCESS_ENABLED ? withFreeAccessQuota({ ...state.user, ...userData }) : { ...state.user, ...userData }) : null
           localStorage.setItem("user", JSON.stringify(newUser))
 
           return { user: newUser }
@@ -193,6 +204,9 @@ const useUserStore = create<UserState>()(
             state?.setToken(storedToken)
             state?.setRememberMe(true)
           }
+        }
+        if (FREE_ACCESS_ENABLED && state) {
+          state.setUser(createFreeAccessUser())
         }
       },
     }

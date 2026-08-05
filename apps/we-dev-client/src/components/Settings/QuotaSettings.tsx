@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getTokenUsage } from "../../api/tokens";
 import { Spin } from "antd";
 import useUserStore, { TierType } from "../../stores/userSlice";
+import { FREE_ACCESS_ENABLED, createFreeAccessUser, withFreeAccessQuota } from "@/utils/freeAccess";
 import { useTranslation } from "react-i18next";
 
 export function QuotaSettings() {
@@ -12,7 +13,9 @@ export function QuotaSettings() {
     fetchUser();
   }, []);
 
-  if(!user?.id){
+  const displayUser = FREE_ACCESS_ENABLED ? withFreeAccessQuota(user || createFreeAccessUser()) : user;
+
+  if(!displayUser?.id){
     return (
       <div className="flex flex-col items-center justify-center h-[200px] text-gray-400">
         <div className="mb-4 translate">{t("common.please_login")}</div>
@@ -28,7 +31,7 @@ export function QuotaSettings() {
     );
   }
   
-  const userQuota = user.userQuota || {
+  const userQuota = displayUser.userQuota || {
     quota: 0,
     resetTime: new Date(),
     tierType: TierType.FREE,
@@ -52,7 +55,7 @@ export function QuotaSettings() {
 
   if (!userQuota) return null;
 
-  const usagePercent = (userQuota.usedQuota / userQuota.quotaTotal) * 100;
+  const usagePercent = FREE_ACCESS_ENABLED ? 0 : (userQuota.usedQuota / userQuota.quotaTotal) * 100;
 
   return (
     <div>
@@ -64,7 +67,7 @@ export function QuotaSettings() {
       <div className="bg-blue-500/85 dark:bg-blue-700/20 rounded-lg p-3 mb-4">
         <div className="flex items-center justify-between mb-3">
           <div className="text-[15px] text-white translate">
-            {userQuota.quotaTotal} {t("usage.monthly_usage")}
+            {FREE_ACCESS_ENABLED ? "Unlimited" : userQuota.quotaTotal} {t("usage.monthly_usage")}
           </div>
         </div>
 
@@ -77,7 +80,7 @@ export function QuotaSettings() {
         </div>
         <div className="flex justify-between text-[14px]">
           <span className="text-white translate">
-            {userQuota.usedQuota} {t("usage.quota_used")}
+            {FREE_ACCESS_ENABLED ? 0 : userQuota.usedQuota} {t("usage.quota_used")}
           </span>
           {/* <span className="text-white translate">
             {remaining.toLocaleString()} {t("usage.remaining")}
@@ -103,7 +106,7 @@ export function QuotaSettings() {
       </div>
 
       {/* Buy More Button */}
-      <button
+      {!FREE_ACCESS_ENABLED && <button
         onClick={() => {
           const url = "https://we0.ai/user";
           if (window.electron?.ipcRenderer) {
@@ -115,7 +118,7 @@ export function QuotaSettings() {
         className="mt-8 w-full bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-1.5 transition-colors text-[14px]"
       >
         <span className="translate">{t("usage.buy_quote")}</span>
-      </button>
+      </button>}
     </div>
   );
 }
