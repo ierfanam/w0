@@ -1,6 +1,6 @@
 import type { ProjectSnapshot, QualityReport } from "./types";
 
-const SECRET_PATTERNS = [/(sk-[A-Za-z0-9_-]{20,})/g, /(api[_-]?key\s*[:=]\s*["'][^"']+["'])/gi, /(password\s*[:=]\s*["'][^"']+["'])/gi];
+const SECRET_PATTERNS = [/(sk-[A-Za-z0-9_-]{20,})/, /(api[_-]?key\s*[:=]\s*["'][^"']+["'])/i, /(password\s*[:=]\s*["'][^"']+["'])/i];
 
 export function qualityGate(project: ProjectSnapshot): QualityReport {
   const findings: QualityReport["findings"] = [];
@@ -15,10 +15,4 @@ export function qualityGate(project: ProjectSnapshot): QualityReport {
   return { score, passed: critical === 0 && high === 0, findings, nextActions: findings.slice(0, 10).map(f => `${f.path || "پروژه"}: ${f.message}`) };
 }
 
-export function adversarialChecklist() {
-  return [
-    "آیا تغییر بدون test باقی مانده است؟", "آیا fallback باعث regression می‌شود؟", "آیا ورودی کاربر به shell/SQL/URL بدون اعتبارسنجی می‌رسد؟",
-    "آیا secret یا token در log/response قرار گرفته است؟", "آیا خطای provider باعث crash کل برنامه می‌شود؟", "آیا RTL یا encoding خراب می‌شود؟",
-    "آیا patch فقط فایل‌های لازم را تغییر داده است؟", "آیا rollback امکان‌پذیر است؟"
-  ];
-}
+export function adversarialChecklist() { return ["آیا تغییر بدون test باقی مانده است؟", "آیا fallback باعث regression می‌شود؟", "آیا ورودی کاربر به shell/SQL/URL بدون اعتبارسنجی می‌رسد؟", "آیا secret یا token در log/response قرار گرفته است؟", "آیا خطای provider باعث crash کل برنامه می‌شود؟", "آیا RTL یا encoding خراب می‌شود؟", "آیا patch فقط فایل‌های لازم را تغییر داده است؟", "آیا rollback امکان‌پذیر است؟"]; }
