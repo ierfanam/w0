@@ -13,6 +13,17 @@ export interface ModelConfig {
 
 export const modelConfig: ModelConfig[] = [
     {
+        modelName: "OpenRouter Free Router",
+        modelKey: "openrouter/free",
+        useImage: false,
+        provider: "openrouter",
+        apiKey: process.env.OPENROUTER_API_KEY,
+        apiUrl: "https://openrouter.ai/api/v1",
+        description: "انتخاب خودکار از مدل‌های رایگان موجود؛ مناسب برای اجرای پیش‌فرض",
+        functionCall: true,
+        free: true,
+    },
+    {
         modelName: "GLM-4.7-Flash (رایگان)",
         modelKey: "glm-4.7-flash",
         useImage: false,
@@ -34,22 +45,10 @@ export const modelConfig: ModelConfig[] = [
         functionCall: true,
         free: true,
     },
-    {
-        modelName: "OpenRouter Free Router",
-        modelKey: "openrouter/free",
-        useImage: false,
-        provider: "openrouter",
-        apiKey: process.env.OPENROUTER_API_KEY,
-        apiUrl: "https://openrouter.ai/api/v1",
-        description: "انتخاب خودکار از مدل‌های رایگان موجود در OpenRouter",
-        functionCall: true,
-        free: true,
-    },
 ];
 
 export async function getAvailableModels() {
     const result = [...modelConfig];
-
     if (process.env.OPENROUTER_API_KEY) {
         try {
             const response = await fetch("https://openrouter.ai/api/v1/models", {
@@ -80,6 +79,5 @@ export async function getAvailableModels() {
             console.warn("OpenRouter model discovery failed", error);
         }
     }
-
     return result;
 }
