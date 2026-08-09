@@ -1,0 +1,10 @@
+{
+  "name": "W0 verify and release",
+  "steps": [
+    { "id": "inspect", "command": "node scripts/w0-agent-runtime.mjs . inspect" },
+    { "id": "lint", "command": "pnpm lint", "failFast": false },
+    { "id": "test", "command": "pnpm test", "failFast": false },
+    { "id": "build", "command": "pnpm build" },
+    { "id": "status", "command": "git status --short --branch" }
+  ]
+}
