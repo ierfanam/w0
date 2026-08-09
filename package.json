@@ -5,8 +5,14 @@
   "scripts": {
     "dev:next": "cd apps/we-dev-next && pnpm install && pnpm dev",
     "dev:admin": "cd apps/we-dev-admin && pnpm install && pnpm dev",
-    "dev:client": "cd apps/we-dev-client  && pnpm dev",
-    "build:client": "cd apps/we-dev-client && pnpm builds"
+    "dev:client": "cd apps/we-dev-client && pnpm dev",
+    "build:client": "cd apps/we-dev-client && pnpm builds",
+    "w0:inspect": "node scripts/w0-agent-runtime.mjs . inspect",
+    "w0:test": "node scripts/w0-agent-runtime.mjs . test",
+    "w0:build": "node scripts/w0-agent-runtime.mjs . build",
+    "w0:lint": "node scripts/w0-agent-runtime.mjs . lint",
+    "w0:workflow": "node scripts/w0-agent-runtime.mjs . workflow",
+    "w0:browser": "node scripts/w0-agent-runtime.mjs . browser"
   },
   "dependencies": {
     "fabric": "^6.5.4",
