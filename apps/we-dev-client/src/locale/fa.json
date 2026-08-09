@@ -1,0 +1,43 @@
+{
+  "common": {
+    "name": "نام",
+    "description": "توضیحات",
+    "edit": "ویرایش",
+    "more": "بیشتر",
+    "delete": "حذف",
+    "cancel": "لغو",
+    "confirm": "تأیید",
+    "open_directory_quota": "پنل سهمیه",
+    "login": "ورود",
+    "close": "بستن",
+    "please_login": "برای مشاهده سهمیه وارد شوید",
+    "format": "قالب",
+    "formatting": "در حال قالب‌بندی..."
+  },
+  "chat": {
+    "urlInput": { "title": "آدرس وب‌سایت را وارد کنید", "placeholder": "آدرس وب‌سایت را وارد کنید", "button": "باز کردن وب‌سایت", "errorInvalid": "آدرس معتبر نیست" },
+    "tips": { "title": "چه چیزی می‌خواهید بسازید؟", "description": "تبدیل طراحی به کد", "uploadSketch": "بارگذاری Sketch یا Figma", "uploadImg": "بارگذاری تصویر", "uploadWebsite": "بارگذاری وب‌سایت", "game": "ساخت بازی مار", "hello": "ساخت یک صفحه زیبا" },
+    "errors": { "file_size_limit": "فایل {fileName} بیشتر از ۵ مگابایت است", "upload_failed": "بارگذاری ناموفق بود", "paste_failed": "چسباندن ناموفق بود", "add_image_failed": "افزودن تصویر ناموفق بود" },
+    "success": { "images_uploaded": "تصویر با موفقیت بارگذاری شد", "images_uploaded_multiple": "{count} تصویر با موفقیت بارگذاری شد", "image_pasted": "تصویر با موفقیت چسبانده شد", "images_pasted_multiple": "{count} تصویر با موفقیت چسبانده شد", "image_added": "تصویر به ورودی افزوده شد", "images_added_multiple": "{count} تصویر به ورودی افزوده شد" },
+    "placeholders": { "input": "پیام را وارد کنید؛ Enter برای ارسال و Shift+Enter برای خط جدید", "tips": "چطور می‌توانم کمک کنم؟" },
+    "buttons": { "send": "ارسال", "upload": "بارگذاری تصویر", "upload_tips": "برای بارگذاری یا چسباندن تصویر کلیک کنید", "upload_sketch": "بارگذاری Sketch یا Figma", "upload_sketch_tips": "برای بارگذاری فایل Sketch یا Figma کلیک کنید", "upload_disabled": "بارگذاری غیرفعال است", "upload_image": "بارگذاری تصویر", "waiting": "لطفاً تا پایان فرایند جاری صبر کنید", "not_support_image": "مدل فعلی از تصویر پشتیبانی نمی‌کند", "click_to_upload": "برای بارگذاری یا چسباندن تصویر کلیک کنید", "figma_integration": "اتصال Figma", "figma_settings": "تنظیمات Figma", "figma_url": "آدرس فایل Figma", "figma_token": "توکن دسترسی Figma", "enter_figma_url": "آدرس فایل Figma را وارد کنید", "enter_figma_token": "توکن دسترسی Figma را وارد کنید", "mcp_disabled": "ابزارهای MCP غیرفعال‌اند", "mcp_tools": "ابزارهای MCP", "not_support_mcp": "مدل فعلی از ابزارهای MCP پشتیبانی نمی‌کند", "click_to_use_mcp": "برای استفاده از MCP کلیک کنید" },
+    "examples": { "title": "می‌توانید این‌طور درخواست کنید", "prompts": { "todo": "یک برنامه Todo با React و Tailwind بساز", "blog": "یک وبلاگ ساده با Astro بساز", "cookie": "فرم رضایت کوکی بساز", "game": "بازی Space Invaders بساز", "center": "چطور یک div را وسط‌چین کنم؟" } },
+    "loading": { "generating": "هوش مصنوعی در حال تولید پاسخ است..." },
+    "modePlaceholders": { "chat": "حالت گفتگو؛ مستقیماً با هوش مصنوعی صحبت کنید", "builder": "حالت سازنده؛ پروژه را با گفتگو بسازید" },
+    "optimizePrompt": { "title": "بهینه‌سازی درخواست", "placeholder": "درخواست خود را وارد کنید...", "processing": "در حال پردازش...", "cancel": "لغو", "loading": "در حال تولید طراحی...", "design": "تولید طراحی", "confirm": "تأیید", "button": "بهینه‌سازی درخواست", "error": "بهینه‌سازی ناموفق بود:", "designPlaceholder": "درخواست طراحی خود را وارد کنید..." },
+    "regenerate_incomplete": "فایل‌های ناقص قبلی را بررسی و تکمیل کن و فایل‌های کامل را دوباره تولید نکن"
+  },
+  "settings": {
+    "title": "تنظیمات", "language": "زبان", "general": "عمومی", "Quota": "سهمیه", "General": "عمومی", "Language": "زبان", "keyPlaceholder": "کلید API را وارد کنید", "save": "ذخیره", "themeMode": "حالت نمایش", "themeModeLight": "روشن", "themeModeDark": "تیره", "MCPServer": "سرور MCP", "proxy": "تنظیمات پروکسی", "noProxy": "بدون پروکسی", "systemProxy": "پروکسی سیستم", "customProxy": "پروکسی سفارشی", "packageMirrors": "آینه‌های بسته", "pythonMirror": "آینه Python", "nodeMirror": "آینه Node", "customMirror": "آینه سفارشی", "themeSystem": "مطابق سیستم",
+    "mcp": { "actions": "عملیات", "active": "فعال", "addError": "افزودن سرور ناموفق بود", "addServer": "افزودن سرور", "addSuccess": "سرور با موفقیت افزوده شد", "args": "آرگومان‌ها", "command": "دستور", "description": "توضیحات", "editJson": "ویرایش JSON", "editServer": "ویرایش سرور", "env": "متغیرهای محیطی", "install": "نصب", "installError": "نصب وابستگی‌ها ناموفق بود", "installSuccess": "وابستگی‌ها نصب شدند", "name": "نام", "noServers": "سروری پیکربندی نشده است", "title": "سرورهای MCP", "type": "نوع", "url": "نشانی" }
+  },
+  "preview": { "noserver": "سروری در حال اجرا نیست", "wxminiPreview": "ابزار توسعه WeChat Mini Program را برای پیش‌نمایش باز کنید" },
+  "editor": { "editor": "ویرایشگر", "preview": "پیش‌نمایش", "apiTest": "آزمون API", "search_in_files": "جستجو در فایل‌ها...", "diff": "تفاوت‌ها" },
+  "header": { "download": "دانلود کد", "deploy": "استقرار", "deploying": "در حال استقرار...", "deploySuccess": "استقرار با موفقیت انجام شد", "deployToCloud": "پروژه با موفقیت مستقر شد", "accessLink": "پیوند دسترسی:", "copy": "کپی", "close": "بستن", "visitSite": "بازدید از سایت", "open_directory": "باز کردن پوشه", "error": { "open_directory": "باز کردن پوشه ناموفق بود", "deploy_failed": "استقرار ناموفق بود" } },
+  "explorer": { "clear_all": "پاک کردن همه", "explorer": "فایل‌ها" },
+  "sidebar": { "start_new_chat": "گفتگوی جدید", "search": "جستجو", "chat_history": "تاریخچه گفتگو", "my_subscription": "اشتراک من", "settings": "تنظیمات", "contact_us": "تماس با ما", "personal_plan": "طرح شخصی" },
+  "usage": { "usage": "مصرف", "monthly_usage": "مصرف ماهانه", "quota_used": "سهمیه مصرف‌شده", "remaining": "باقی‌مانده", "billing_cycle": "چرخه صورتحساب", "next_reset": "بازنشانی بعدی", "days": "روز", "type": "نوع", "buy_quote": "خرید سهمیه بیشتر", "personal_plan": "طرح شخصی" },
+  "login": { "guest": "مهمان", "title": "لطفاً وارد شوید", "click_to_login": "برای ورود کلیک کنید", "AI_powered_development_platform": "پلتفرم توسعه مبتنی بر هوش مصنوعی", "email": "ایمیل", "password": "رمز عبور", "sign_in": "ورود", "signing_in": "در حال ورود...", "remember_me": "مرا به خاطر بسپار", "forgot_password": "رمز عبور را فراموش کرده‌اید؟", "terms_of_service": "شرایط استفاده", "privacy_policy": "حریم خصوصی", "and": "و", "need_an_account": "حساب کاربری ندارید؟", "register": "ثبت‌نام", "continue_with_github": "ادامه با GitHub", "chat_limit_reached": "محدودیت گفتگو رسید", "usage_limit_reached": "محدودیت مصرف رسید" },
+  "register": { "register_success": "ثبت‌نام موفق بود", "process_login": "ادامه به ورود", "create_account": "ایجاد حساب We0", "creating_account": "در حال ایجاد حساب...", "create_account_button": "ایجاد حساب", "already_account": "قبلاً حساب دارید؟" },
+  "sketch": { "title": "ویرایشگر Sketch", "generating": "در حال تولید...", "generate_success": "تولید با موفقیت انجام شد", "generate_failed": "تولید ناموفق بود", "get_code": "دریافت کد", "select_tech": "انتخاب فناوری" }
+}
