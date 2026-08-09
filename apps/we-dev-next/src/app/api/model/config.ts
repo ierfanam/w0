@@ -11,6 +11,18 @@ export interface ModelConfig {
     free?: boolean;
 }
 
+const zhipu = (modelName: string, modelKey: string, useImage = false, description = "مدل رایگان زپیو") => ({
+    modelName: `${modelName} (رایگان)`,
+    modelKey,
+    useImage,
+    provider: "zhipu",
+    apiKey: process.env.ZHIPU_API_KEY,
+    apiUrl: "https://open.bigmodel.cn/api/paas/v4",
+    description,
+    functionCall: true,
+    free: true,
+});
+
 export const modelConfig: ModelConfig[] = [
     {
         modelName: "OpenRouter Free Router",
@@ -19,32 +31,14 @@ export const modelConfig: ModelConfig[] = [
         provider: "openrouter",
         apiKey: process.env.OPENROUTER_API_KEY,
         apiUrl: "https://openrouter.ai/api/v1",
-        description: "انتخاب خودکار از مدل‌های رایگان موجود؛ مناسب برای اجرای پیش‌فرض",
+        description: "انتخاب خودکار از مدل‌های رایگان موجود",
         functionCall: true,
         free: true,
     },
-    {
-        modelName: "GLM-4.7-Flash (رایگان)",
-        modelKey: "glm-4.7-flash",
-        useImage: false,
-        provider: "zhipu",
-        apiKey: process.env.ZHIPU_API_KEY,
-        apiUrl: "https://open.bigmodel.cn/api/paas/v4",
-        description: "مدل رایگان زپیو؛ مناسب کدنویسی، عامل‌ها و پروژه‌های طولانی",
-        functionCall: true,
-        free: true,
-    },
-    {
-        modelName: "GLM-4.1V-Thinking-Flash (رایگان)",
-        modelKey: "glm-4.1v-thinking-flash",
-        useImage: true,
-        provider: "zhipu",
-        apiKey: process.env.ZHIPU_API_KEY,
-        apiUrl: "https://open.bigmodel.cn/api/paas/v4",
-        description: "مدل رایگان بینایی/استدلال برای تصویر، رابط کاربری و کدنویسی",
-        functionCall: true,
-        free: true,
-    },
+    zhipu("GLM-4.7-Flash", "glm-4.7-flash", false, "مدل رایگان Coding/Agent با context تا 200K"),
+    zhipu("GLM-4.5-Flash", "glm-4.5-flash", false, "مدل رایگان استدلال و ابزار؛ مسیر قدیمی به 4.7 هدایت می‌شود"),
+    zhipu("GLM-4V-Flash", "glm-4v-flash", true, "مدل رایگان درک تصویر"),
+    zhipu("GLM-4.1V-Thinking-Flash", "glm-4.1v-thinking-flash", true, "مدل رایگان بینایی و استدلال"),
 ];
 
 export async function getAvailableModels() {
