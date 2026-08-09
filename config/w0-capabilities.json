@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "capabilities": ["coding","reasoning","vision","longContext","toolCalling","json","web","persian","translation","agentic","speed","reliability","speech","realtime"],
+  "tasks": {
+    "ui-generation": ["vision","coding","reasoning"],
+    "bug-fixing": ["coding","reasoning","longContext"],
+    "image-analysis": ["vision"],
+    "research": ["web","longContext","reasoning"],
+    "voice": ["speech","persian","realtime"],
+    "tool-execution": ["toolCalling","agentic"],
+    "translation": ["translation","persian"],
+    "architecture": ["reasoning","longContext","coding"]
+  },
+  "routing": {
+    "strategy": "capability-first-score",
+    "scoreWeights": {"capability": 0.55, "reliability": 0.2, "speed": 0.15, "availability": 0.1},
+    "fallback": true,
+    "providerFailureThreshold": 2
+  }
+}
