@@ -14,50 +14,29 @@ import {UpdateTip} from "./components/UpdateTip"
 import useInit from "./hooks/useInit";
 import {Loading} from "./components/loading";
 import TopViewContainer from "./components/TopView";
+import TeamMode from "./components/TeamMode";
 
 function App() {
     const {mode, initOpen} = useChatModeStore();
-
     const {isLoginModalOpen, closeLoginModal, openLoginModal} = useUserStore();
-
     const {isDarkMode} = useInit();
 
     return (
         <TopViewContainer>
             <GlobalLimitModal onLogin={openLoginModal}/>
             <Login isOpen={isLoginModalOpen} onClose={closeLoginModal}/>
-            <div
-                className={classNames(
-                    "h-screen w-screen flex flex-col overflow-hidden",
-                    {
-                        dark: isDarkMode,
-                    }
-                )}
-            >
+            <div className={classNames("h-screen w-screen flex flex-col overflow-hidden", { dark: isDarkMode })}>
                 <Header/>
-                <div
-                    className="flex flex-row w-full h-full max-h-[calc(100%-48px)] bg-white dark:bg-[#111]"
-                >
+                <div className="flex flex-row w-full h-full max-h-[calc(100%-48px)] bg-white dark:bg-[#111]">
                     <AiChat/>
                     {mode === ChatMode.Builder && !initOpen && <EditorPreviewTabs/>}
                 </div>
             </div>
+            <div className="fixed right-4 bottom-4 z-[100000]">
+                <TeamMode apiBase={process.env.APP_BASE_URL || ""} />
+            </div>
             <UpdateTip/>
-            <ToastContainer
-                position="top-center"
-                autoClose={2000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-                style={{
-                    zIndex: 100000,
-                }}
-            />
+            <ToastContainer position="top-center" autoClose={2000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" style={{ zIndex: 100000 }}/>
             <Loading/>
         </TopViewContainer>
     );
