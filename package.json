@@ -12,7 +12,13 @@
     "w0:build": "node scripts/w0-agent-runtime.mjs . build",
     "w0:lint": "node scripts/w0-agent-runtime.mjs . lint",
     "w0:workflow": "node scripts/w0-agent-runtime.mjs . workflow",
-    "w0:browser": "node scripts/w0-agent-runtime.mjs . browser"
+    "w0:browser": "node scripts/w0-agent-runtime.mjs . browser",
+    "w0:self-heal": "node scripts/w0-agent-runtime.mjs . self-heal",
+    "w0:workspace": "node scripts/w0-agent-runtime.mjs . workspace",
+    "w0:tools": "node scripts/w0-agent-runtime.mjs . tools",
+    "w0:benchmark": "node scripts/w0-agent-runtime.mjs . benchmark",
+    "w0:observability": "node scripts/w0-agent-runtime.mjs . observability",
+    "w0:visual-qa": "node scripts/w0-visual-qa.mjs ."
   },
   "dependencies": {
     "fabric": "^6.5.4",
@@ -22,6 +28,7 @@
   },
   "devDependencies": {
     "axios": "^1.7.9",
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "playwright": "^1.55.0"
   }
 }
