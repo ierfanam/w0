@@ -1,0 +1,31 @@
+{
+  "providers": [
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "capabilities": ["coding","reasoning","vision","long-context","tool-calling","json","web","persian","translation","agentic"],
+      "score": 80,
+      "timeoutMs": 45000
+    },
+    {
+      "id": "openai-compatible",
+      "name": "OpenAI-compatible endpoint",
+      "baseUrl": "",
+      "apiKeyEnv": "W0_OPENAI_COMPATIBLE_API_KEY",
+      "capabilities": ["coding","reasoning","json","tool-calling","persian","translation","agentic"],
+      "score": 70,
+      "timeoutMs": 45000
+    },
+    {
+      "id": "public-compatible",
+      "name": "Configured public compatible endpoint",
+      "baseUrl": "",
+      "public": true,
+      "capabilities": ["coding","reasoning","json","persian"],
+      "score": 40,
+      "timeoutMs": 45000
+    }
+  ]
+}

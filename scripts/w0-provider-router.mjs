@@ -1,49 +1,58 @@
 #!/usr/bin/env node
 import { promises as fs } from "node:fs";
-import process from "node:process";
+import path from "node:path";
 
-/**
- * OpenAI-compatible provider router.
- * W0_PROVIDER_ENDPOINTS is a JSON array of {id,baseUrl,apiKeyEnv,model,capabilities,priority}.
- * The router never removes provider-side quotas; it only fails over between configured providers.
- */
-const root = process.argv[2] || process.cwd();
-const task = process.argv[3] || "general";
-const prompt = process.argv.slice(4).join(" ") || "Return a concise health response.";
-const capabilityMap = {
-  coding: ["coding","reasoning"],
-  ui: ["vision","coding","reasoning"],
-  image: ["vision"],
-  research: ["web","longContext","reasoning"],
-  voice: ["speech","realtime","persian"],
-  general: ["reasoning"]
-};
-function envProviders(){
-  try{return JSON.parse(process.env.W0_PROVIDER_ENDPOINTS || "[]");}
-  catch(e){throw new Error(`Invalid W0_PROVIDER_ENDPOINTS JSON: ${e.message}`)}
+const root = path.resolve(process.argv[2] || process.cwd());
+const configPath = path.join(root, ".w0", "providers.json");
+const statePath = path.join(root, ".w0", "provider-health.json");
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function readJson(file, fallback) { try { return JSON.parse(await fs.readFile(file, "utf8")); } catch { return fallback; } }
+async function writeJson(file, value) { await fs.mkdir(path.dirname(file), { recursive: true }); await fs.writeFile(file, JSON.stringify(value, null, 2)); }
+function env(name, fallback = "") { return process.env[name] || fallback; }
+
+async function loadProviders() {
+  const cfg = await readJson(configPath, { providers: [] });
+  return (cfg.providers || []).filter(p => p.enabled !== false && p.baseUrl && (p.public === true || p.apiKeyEnv));
 }
-function score(p,required){
-  const caps=new Set(p.capabilities||[]); const matched=required.filter(x=>caps.has(x)).length;
-  return matched*100-(Number(p.priority)||100);
+
+async function health() {
+  const providers = await loadProviders();
+  const state = await readJson(statePath, {});
+  return providers.map(p => ({ id:p.id, name:p.name || p.id, capabilities:p.capabilities || [], score:Number(state[p.id]?.score ?? p.score ?? 50), failures:Number(state[p.id]?.failures || 0), cooldownUntil:state[p.id]?.cooldownUntil || null }));
 }
-function candidates(){
-  const required=capabilityMap[task]||capabilityMap.general;
-  return envProviders().filter(p=>p.baseUrl&&p.model&&process.env[p.apiKeyEnv||""]).sort((a,b)=>score(b,required)-score(a,required));
+
+function eligible(p, required) { const caps = new Set(p.capabilities || []); return required.every(c => caps.has(c)); }
+function ranked(list, required) {
+  const now = Date.now();
+  return list.filter(p => eligible(p, required)).filter(p => !p.cooldownUntil || new Date(p.cooldownUntil).getTime() <= now).sort((a,b) => b.score-a.score);
 }
-async function callProvider(p){
-  const base=p.baseUrl.replace(/\/$/,"");
-  const key=process.env[p.apiKeyEnv];
-  const controller=new AbortController(); const timer=setTimeout(()=>controller.abort(),Number(process.env.W0_PROVIDER_TIMEOUT_MS||45000));
-  try{
-    const res=await fetch(`${base}/chat/completions`,{method:"POST",headers:{"content-type":"application/json","authorization":`Bearer ${key}`},body:JSON.stringify({model:p.model,messages:[{role:"user",content:prompt}],temperature:0.2}),signal:controller.signal});
-    const text=await res.text(); if(!res.ok) throw new Error(`${res.status}: ${text.slice(0,500)}`);
-    const data=JSON.parse(text); return {provider:p.id,model:p.model,content:data.choices?.[0]?.message?.content||"",usage:data.usage||null};
-  } finally {clearTimeout(timer)}
+
+async function record(id, ok, latencyMs, error = "") {
+  const state = await readJson(statePath, {}); const s = state[id] || {score:50, failures:0, successes:0};
+  if (ok) { s.successes++; s.failures=0; s.score=Math.min(100,s.score+Math.max(1,Math.round(8-latencyMs/1000))); s.cooldownUntil=null; }
+  else { s.failures++; s.score=Math.max(0,s.score-Math.min(30,8*s.failures)); if(s.failures>=3)s.cooldownUntil=new Date(Date.now()+Math.min(300000,s.failures*15000)).toISOString(); s.lastError=String(error).slice(0,1000); }
+  s.lastLatencyMs=latencyMs; s.updatedAt=new Date().toISOString(); state[id]=s; await writeJson(statePath,state);
 }
-async function main(){
-  const providers=candidates(); if(!providers.length) throw new Error("No configured provider with a matching API key. Configure W0_PROVIDER_ENDPOINTS.");
+
+async function callProvider(p, payload) {
+  const started=Date.now(); const key=p.apiKeyEnv ? env(p.apiKeyEnv) : "";
+  const headers={"content-type":"application/json",...(p.headers||{})}; if(key)headers.authorization=`Bearer ${key}`;
+  const controller=new AbortController(); const timer=setTimeout(()=>controller.abort(),Number(p.timeoutMs||45000));
+  try {
+    const response=await fetch(p.baseUrl.replace(/\/$/,"")+"/chat/completions",{method:"POST",headers,body:JSON.stringify(payload),signal:controller.signal});
+    const text=await response.text(); let body; try{body=JSON.parse(text)}catch{body={raw:text}}; const latency=Date.now()-started;
+    if(!response.ok){const e=new Error(`${p.id}: HTTP ${response.status}`);e.status=response.status;e.retryable=[408,409,425,429,500,502,503,504].includes(response.status);e.body=body;await record(p.id,false,latency,e.message);throw e;}
+    await record(p.id,true,latency); return {provider:p.id,latencyMs:latency,data:body};
+  } catch(e) { if(!e.body)await record(p.id,false,Date.now()-started,e.message); throw e; } finally { clearTimeout(timer); }
+}
+
+async function route(payload, required=[]) {
+  const candidates=ranked(await health(),required); if(!candidates.length)throw new Error(`No eligible configured provider for: ${required.join(",")||"none"}`);
   const attempts=[];
-  for(const p of providers){try{const result=await callProvider(p);console.log(JSON.stringify({ok:true,task,attempts, ...result},null,2));return}catch(error){attempts.push({provider:p.id,error:String(error.message||error)})}}
-  console.log(JSON.stringify({ok:false,task,attempts},null,2));process.exitCode=1;
+  for(const p of candidates){try{const result=await callProvider(p,payload);attempts.push({provider:p.id,ok:true,latencyMs:result.latencyMs});return {...result,attempts};}catch(e){attempts.push({provider:p.id,ok:false,status:e.status||null,retryable:e.retryable!==false,error:String(e.message||e)});if(e.retryable===false)break;await sleep(100);}}
+  throw new Error(`All eligible providers failed: ${JSON.stringify(attempts)}`);
 }
+
+async function main(){const command=process.argv[3]||"health";if(command==="health"){console.log(JSON.stringify(await health(),null,2));return;}if(command==="route"){const payload=JSON.parse(await fs.readFile(path.resolve(root,process.argv[4]),"utf8"));console.log(JSON.stringify(await route(payload,process.argv.slice(5)),null,2));return;}throw new Error(`Unknown command: ${command}`)}
 main().catch(e=>{console.error(e.message);process.exitCode=1});
