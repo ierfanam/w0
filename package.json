@@ -22,7 +22,10 @@
     "w0:autopilot": "node scripts/w0-autopilot.mjs .",
     "w0:provider": "node scripts/w0-provider-router.mjs .",
     "w0:memory": "node scripts/w0-memory.mjs .",
-    "w0:skills": "node scripts/w0-skills.mjs ."
+    "w0:skills": "node scripts/w0-skills.mjs .",
+    "w0:policy": "node scripts/w0-policy-engine.mjs .",
+    "w0:policy:prompt": "node scripts/w0-policy-engine.mjs . prompt",
+    "w0:policy:agents": "node scripts/w0-policy-engine.mjs . agents"
   },
   "dependencies": {
     "fabric": "^6.5.4",
