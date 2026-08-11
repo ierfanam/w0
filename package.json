@@ -18,7 +18,11 @@
     "w0:tools": "node scripts/w0-agent-runtime.mjs . tools",
     "w0:benchmark": "node scripts/w0-agent-runtime.mjs . benchmark",
     "w0:observability": "node scripts/w0-agent-runtime.mjs . observability",
-    "w0:visual-qa": "node scripts/w0-visual-qa.mjs ."
+    "w0:visual-qa": "node scripts/w0-visual-qa.mjs .",
+    "w0:autopilot": "node scripts/w0-autopilot.mjs .",
+    "w0:provider": "node scripts/w0-provider-router.mjs .",
+    "w0:memory": "node scripts/w0-memory.mjs .",
+    "w0:skills": "node scripts/w0-skills.mjs ."
   },
   "dependencies": {
     "fabric": "^6.5.4",
