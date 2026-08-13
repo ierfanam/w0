@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 export async function POST(request: Request) {
-    console.log(process.env.NETLIFY_TOKEN, "NETLIFY_TOKEN");
-    console.log(process.env.NETLIFY_DEPLOY_URL, "NETLIFY_DEPLOY_URL");
     const accessToken= process.env.NETLIFY_TOKEN;
     const url = process.env.NETLIFY_DEPLOY_URL;
     const formData = await request.formData();

@@ -263,7 +263,8 @@
     "days": "days",
     "type": "type",
     "buy_quote": "Buy More Quota",
-    "personal_plan": "Personal Plan"
+    "personal_plan": "Personal Plan",
+    "unlimited": "Unlimited"
   },
   "login": {
     "guest": "Guest",

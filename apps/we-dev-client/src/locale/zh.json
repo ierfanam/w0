@@ -265,7 +265,8 @@
     "type": "类型",
     "monthly_limit": "每月限额",
     "buy_quote": "购买更多次数",
-    "personal_plan": "个人面板"
+    "personal_plan": "个人面板",
+    "unlimited": "无限制"
   },
   "login": {
     "guest": "游客",

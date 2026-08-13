@@ -1,0 +1,278 @@
+{
+  "header": {
+    "pricing": "قیمت‌گذاری",
+    "aboutUs": "درباره ما",
+    "webVersion": "نسخه وب",
+    "account": "حساب",
+    "logout": "خروج",
+    "login": "ورود"
+  },
+  "hero": {
+    "language": "fa",
+    "title": "هر کدی را یک‌باره تولید و طراحی کنید",
+    "slogan": "برنامه‌های مبتنی بر هوش مصنوعی شامل Vue، React، Next.js، Python، Java و مینی‌برنامه‌های وی‌چت بسازید.",
+    "download": {
+      "macIntel": "دانلود برای مک (اینتل)",
+      "macArm": "دانلود برای مک (اپل سیلیکون)",
+      "windows": "دانلود برای ویندوز"
+    }
+  },
+  "inputSection": {
+    "title": "با یک پرامپت ساده شروع کنید",
+    "placeholder": "با we0 شروع به ساخت یک برنامه کنید",
+    "button": "تولید",
+    "importImage": "وارد کردن تصویر",
+    "sketchFile": "فایل Sketch یا Figma",
+    "generateDesign": "تولید طرح",
+    "send": "ارسال",
+    "maxImagesAlert": "حداکثر می‌توانید ۵ تصویر بارگذاری کنید",
+    "uploadSuccess": "بارگذاری موفق:",
+    "uploadFailed": "بارگذاری ناموفق:",
+    "uploadError": "خطای بارگذاری:",
+    "inputRequired": "لطفاً متنی وارد کنید یا تصویری بارگذاری کنید",
+    "uploadedImage": "تصویر بارگذاری‌شده",
+    "removeImage": "حذف تصویر",
+    "dropImageHere": "تصویر را اینجا رها کنید",
+    "uploading": "در حال بارگذاری..."
+  },
+  "projectsSection": {
+    "title": "پروژه‌های نمونه",
+    "subtitle": "ببینید دیگران با We0 چه ساخته‌اند",
+    "viewMore": "مشاهده بیشتر",
+    "saas": {
+      "description": "صفحه بصری‌سازی بک‌اند"
+    },
+    "business": {
+      "description": "صفحه اصلی بک‌اند"
+    },
+    "corporate": {
+      "description": "صفحه ورود دسکتاپ"
+    },
+    "product": {
+      "description": "صفحه ورود موبایل"
+    }
+  },
+  "pricingPlans": {
+    "paymentSuccess": "پرداخت موفق!",
+    "upgradePlan": "ارتقای طرح",
+    "title": "طرح خود را انتخاب کنید",
+    "subtitle": "ما گزینه‌های قیمت‌گذاری منعطف برای نیازهای مختلف توسعه ارائه می‌دهیم",
+    "loginRequired": "لطفاً ابتدا وارد شوید",
+    "currentPlan": "طرح فعلی",
+    "downgradeToFree": "تنزل به رایگان",
+    "upgradeToPro": "ارتقا به Pro",
+    "upgradeToProMax": "ارتقا به Pro Max",
+    "upgradeToEnterprise": "ارتقا به سازمانی",
+    "getStarted": "شروع کنید",
+    "free": {
+      "name": "رایگان",
+      "price": "رایگان",
+      "description": "مناسب برای توسعه‌دهندگان مستقل و پروژه‌های کوچک",
+      "features": [
+        "تولید کد با هوش مصنوعی",
+        "قالب‌های پایه پروژه",
+        "پشتیبانی جامعه",
+        "ابزارهای پایه توسعه",
+        "درخواست‌های نامحدود"
+      ],
+      "button": "شروع کنید"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "رایگان",
+      "period": "",
+      "description": "ایده‌آل برای توسعه‌دهندگان پیشرفته و تیم‌ها",
+      "features": [
+        "همه امکانات رایگان",
+        "پاسخ اولویت‌دار هوش مصنوعی",
+        "تولید API بک‌اند",
+        "تبدیل Sketch به کد",
+        "درخواست‌های نامحدود"
+      ],
+      "button": "شروع کنید",
+      "popular": "محبوب‌ترین"
+    },
+    "enterprise": {
+      "name": "سازمانی",
+      "price": "رایگان",
+      "period": "",
+      "description": "برای نیازهای حرفه‌ای توسعه",
+      "features": [
+        "همه امکانات Pro",
+        "درخواست‌های نامحدود",
+        "پشتیبانی اختصاصی مشتری",
+        "آموزش مدل سفارشی",
+        "یکپارچه‌سازی پیشرفته API"
+      ],
+      "button": "شروع کنید"
+    }
+  },
+  "userPage": {
+    "title": "تنظیمات",
+    "subtitle": "می‌توانید حساب و صورت‌حساب خود را اینجا مدیریت کنید",
+    "upgradeToPro": "ارتقا به Pro",
+    "upgradeToProMax": "ارتقا به Pro Max",
+    "getMoreToken": "دریافت توکن بیشتر",
+    "basicInfo": {
+      "title": "اطلاعات پایه",
+      "username": "نام کاربری",
+      "email": "ایمیل",
+      "setEmail": "برای تنظیم ایمیل خود اینجا کلیک کنید"
+    },
+    "emailDialog": {
+      "title": "تنظیم ایمیل",
+      "description": "پیش از استفاده از خدمات باید آدرس ایمیل خود را تنظیم کنید",
+      "confirm": "تأیید",
+      "invalidEmail": "لطفاً یک آدرس ایمیل معتبر وارد کنید",
+      "sendSuccess": "ایمیل با موفقیت ارسال شد",
+      "emailUsed": "این ایمیل قبلاً توسط کاربر دیگری استفاده شده است"
+    },
+    "account": {
+      "title": "حساب",
+      "advanced": "پیشرفته"
+    },
+    "usage": {
+      "title": "میزان استفاده",
+      "requestsLeft": "درخواست‌های باقی‌مانده",
+      "unlimited": "نامحدود",
+      "tier": "سطح فعلی",
+      "free": "رایگان",
+      "pro": "Pro",
+      "enterprise": "سازمانی",
+      "nextResetDate": "تاریخ بازنشانی بعدی",
+      "totalQuota": "سهمیه کل",
+      "quotaDescription": "شما {used} درخواست از سهمیه کل {total} درخواست خود را استفاده کرده‌اید.",
+      "refillQuota": "سهمیه شارژ مجدد",
+      "refillQuotaDescription": "شما {remaining} سهمیه شارژ مجدد باقی‌مانده در دسترس دارید."
+    }
+  },
+  "login": {
+    "signIn": "ورود",
+    "signingIn": "در حال ورود...",
+    "or": "یا",
+    "createAccount": "ساخت حساب",
+    "emailAddress": "آدرس ایمیل",
+    "emailPlaceholder": "ایمیل شما",
+    "password": "رمز عبور",
+    "passwordPlaceholder": "رمز عبور",
+    "signInWithGithub": "ورود با گیت‌هاب",
+    "signInWithWechat": "ورود با وی‌چت",
+    "loginFailed": "ورود ناموفق بود",
+    "wechatLoginFailed": "ورود با وی‌چت ناموفق بود",
+    "githubLoginFailed": "ورود با گیت‌هاب ناموفق بود",
+    "passwordError": "رمز عبور نادرست است"
+  },
+  "payment": {
+    "updateToPro": "ارتقا به Pro",
+    "updateToProMax": "ارتقا به Pro Max",
+    "getMoreToken": "دریافت توکن بیشتر",
+    "paymentSuccess": "پرداخت موفق!",
+    "upgradePlan": "ارتقای طرح",
+    "selectPaymentMethod": "انتخاب روش پرداخت",
+    "confirmPayment": "تأیید پرداخت",
+    "paymentCompleted": "پرداخت تکمیل شد",
+    "orderError": "خطایی در سفارش رخ داد، لطفاً با پشتیبانی تماس بگیرید",
+    "orderCancelled": "سفارش لغو شد",
+    "loginRequired": "لطفاً ابتدا وارد شوید",
+    "loginFirst": "لطفاً پیش از خرید وارد شوید",
+    "goToLogin": "رفتن به ورود",
+    "stripePayment": "پرداخت Stripe",
+    "stripePaymentDesc": "در حال هدایت به صفحه پرداخت Stripe",
+    "processingPayment": "در حال پردازش پرداخت...",
+    "paymentSuccessDesc": "پرداخت موفق، در حال به‌روزرسانی اطلاعات حساب شما",
+    "paymentFailed": "پرداخت ناموفق بود",
+    "paymentFailedDesc": "خطایی هنگام پرداخت رخ داد، لطفاً دوباره تلاش کنید",
+    "cancelPayment": "لغو پرداخت",
+    "stripeError": "خطای پرداخت Stripe",
+    "paymentError": "خطای فرایند پرداخت",
+    "features": {
+      "title": "{name} - {price}/ماه",
+      "pro": "Pro",
+      "proMax": "Pro Max"
+    },
+    "wechat": {
+      "title": "پرداخت وی‌چت",
+      "subtitle": "لطفاً کد QR را با وی‌چت اسکن کنید تا پرداخت تکمیل شود",
+      "amount": "مبلغ پرداخت",
+      "validityPeriod": "اعتبار کد QR: {time}",
+      "expired": "کد QR منقضی شد",
+      "getNew": "دریافت کد جدید",
+      "cancel": "لغو پرداخت",
+      "refresh": "تازه‌سازی کد QR",
+      "tips": {
+        "title": "نکات:",
+        "scanWithWechat": "لطفاً با وی‌چت پی اسکن کنید",
+        "refreshIfNeeded": "در صورت بروز مشکل روی تازه‌سازی کلیک کنید",
+        "autoRedirect": "پس از پرداخت به‌طور خودکار هدایت می‌شود"
+      },
+      "orderError": "دریافت اطلاعات سفارش ناموفق بود، لطفاً با پشتیبانی مشتری تماس بگیرید"
+    }
+  },
+  "downloadButton": {
+    "comingSoon": "به‌زودی، لطفاً منتظر بمانید... اکنون می‌توانید از نسخه وب استفاده کنید"
+  },
+  "register": {
+    "createAccount": "ساخت حساب",
+    "alreadyHaveAccount": "از قبل حساب دارید؟",
+    "signInNow": "همین حالا وارد شوید",
+    "emailAddress": "آدرس ایمیل",
+    "password": "رمز عبور",
+    "confirmPassword": "تأیید رمز عبور",
+    "register": "ثبت‌نام",
+    "registering": "در حال ثبت‌نام...",
+    "or": "یا",
+    "registerWithGithub": "ثبت‌نام با گیت‌هاب",
+    "registerWithWechat": "ثبت‌نام با وی‌چت",
+    "passwordsNotMatch": "رمزهای عبور مطابقت ندارند",
+    "registrationFailed": "ثبت‌نام ناموفق بود",
+    "wechatRegisterFailed": "ثبت‌نام با وی‌چت ناموفق بود",
+    "githubRegisterFailed": "ثبت‌نام با گیت‌هاب ناموفق بود",
+    "emailAlreadyExists": "کاربر از قبل وجود دارد"
+  },
+  "forgotPassword": {
+    "title": "بازنشانی رمز عبور",
+    "email": "آدرس ایمیل",
+    "emailPlaceholder": "ایمیل خود را وارد کنید",
+    "oldPassword": "رمز عبور قدیمی",
+    "oldPasswordPlaceholder": "رمز عبور قدیمی خود را وارد کنید",
+    "newPassword": "رمز عبور جدید",
+    "newPasswordPlaceholder": "رمز عبور جدید خود را وارد کنید",
+    "submit": "به‌روزرسانی رمز عبور",
+    "submitting": "در حال به‌روزرسانی...",
+    "backToLogin": "بازگشت به ورود",
+    "success": "رمز عبور با موفقیت به‌روزرسانی شد",
+    "error": {
+      "missingFields": "لطفاً همه فیلدها را پر کنید",
+      "userNotFound": "کاربر یافت نشد",
+      "invalidOldPassword": "رمز عبور قدیمی نامعتبر است",
+      "updateFailed": "به‌روزرسانی رمز عبور ناموفق بود"
+    }
+  },
+  "featureCards": {
+    "title": "قابلیت‌های تولید کد We0",
+    "screenshotToCode": {
+      "title": "اسکرین‌شات به کد",
+      "description": "هر اسکرین‌شات طراحی را بارگذاری کنید و کد دقیق و پیکسل‌به‌پیکسل بگیرید."
+    },
+    "urlToCode": {
+      "title": "آدرس به کد",
+      "description": "هر وب‌سایتی را تنها با چسباندن آدرسش کلون کنید."
+    },
+    "figmaToCode": {
+      "title": "Figma به کد",
+      "description": "یکپارچه‌سازی مستقیم با Figma/Sketch — طرح‌های خود را با یک کلیک تبدیل کنید."
+    },
+    "smartComponentDetection": {
+      "title": "تشخیص هوشمند کامپوننت",
+      "description": "هوش مصنوعی به‌طور خودکار کامپوننت‌های رابط کاربری را شناسایی و نگاشت می‌کند."
+    },
+    "frameworkChoice": {
+      "title": "انتخاب فریم‌ورک",
+      "description": "تولید کد برای Vue، React، Next.js، Python، Java و مینی‌برنامه‌های وی‌چت"
+    },
+    "responsiveByDefault": {
+      "title": "واکنش‌گرا به‌صورت پیش‌فرض",
+      "description": "همه کدهای تولیدشده سازگار با موبایل و واکنش‌گرا هستند."
+    }
+  }
+}

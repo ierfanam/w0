@@ -7,7 +7,7 @@ import {tool} from "ai";
 import {jsonSchemaToZodSchema} from "@/app/api/chat/utils/json2zod";
 
 
-const MAX_RESPONSE_SEGMENTS = 2;
+const MAX_RESPONSE_SEGMENTS = 10;
 
 export async function handleChatMode(
     messages: Messages,
