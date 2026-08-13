@@ -7,23 +7,27 @@ import createIntlMiddleware from 'next-intl/middleware';
 acceptLanguage.languages(locales)
 const intlMiddleware = createIntlMiddleware({
   locales,
-  defaultLocale: Language.English,
+  defaultLocale: Language.Persian,
   localePrefix: "always",
   localeDetection: true,
   pathnames: {
     '/': {
+      fa: '/',
       en: '/',
       'zh-CN': '/'
     },
     '/user': {
+      fa: '/user',
       en: '/user',
       'zh-CN': '/user'
     },
     '/login': {
+      fa: '/login',
       en: '/login',
       'zh-CN': '/login'
     },
     '/register': {
+      fa: '/register',
       en: '/register',
       'zh-CN': '/register'
     }

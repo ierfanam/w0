@@ -1,0 +1,413 @@
+{
+  "Welcome to React": "به ری‌اکت خوش آمدید",
+  "common": {
+    "name": "نام",
+    "description": "توضیحات",
+    "edit": "ویرایش",
+    "more": "بیشتر",
+    "delete": "حذف",
+    "cancel": "لغو",
+    "confirm": "تأیید",
+    "open_directory_quota": "پنل سهمیه",
+    "login": "ورود",
+    "close": "بستن",
+    "please_login": "برای مشاهده سهمیه خود وارد شوید",
+    "format": "قالب‌بندی",
+    "formatting": "در حال قالب‌بندی..."
+  },
+  "chat": {
+    "urlInput": {
+      "title": "آدرس وب‌سایت را وارد کنید",
+      "placeholder": "لطفاً آدرس وب‌سایت برای اسکرین‌شات را وارد کنید",
+      "button": "باز کردن وب‌سایت",
+      "errorInvalid": "لطفاً یک آدرس معتبر وارد کنید"
+    },
+    "tips": {
+      "title": "آنچه می‌خواهید بسازید",
+      "description": "قابلیت d2c اسکچ فقط در نسخه آنلاین در دسترس است",
+      "uploadSketch": "بارگذاری Sketch یا Figma",
+      "uploadImg": "بارگذاری تصویر",
+      "uploadWebsite": "بارگذاری وب‌سایت",
+      "game": "ساخت یک بازی مار",
+      "hello": "ساخت یک صفحه زیبا"
+    },
+    "errors": {
+      "file_size_limit": "فایل {fileName} از محدودیت ۵ مگابایت فراتر رفته است",
+      "upload_failed": "بارگذاری ناموفق بود",
+      "paste_failed": "چسباندن تصویر ناموفق بود",
+      "add_image_failed": "افزودن تصویر ناموفق بود"
+    },
+    "success": {
+      "images_uploaded": "تصویر با موفقیت بارگذاری شد",
+      "images_uploaded_multiple": "{count} تصویر با موفقیت بارگذاری شد",
+      "image_pasted": "تصویر با موفقیت چسبانده شد",
+      "images_pasted_multiple": "{count} تصویر با موفقیت چسبانده شد",
+      "image_added": "تصویر به ورودی افزوده شد",
+      "images_added_multiple": "{count} تصویر به ورودی افزوده شد"
+    },
+    "placeholders": {
+      "input": "پیام را وارد کنید، Enter برای ارسال، Shift+Enter برای خط جدید...",
+      "tips": "چطور می‌توانم کمکتان کنم؟ (برای چسباندن تصویر Ctrl+V را بزنید)"
+    },
+    "buttons": {
+      "send": "ارسال",
+      "upload": "بارگذاری تصویر",
+      "upload_tips": "برای بارگذاری کلیک کنید یا تصویر بچسبانید",
+      "upload_sketch": "بارگذاری Sketch یا Figma",
+      "upload_sketch_tips": "برای بارگذاری فایل‌های Sketch یا Figma کلیک کنید",
+      "upload_disabled": "بارگذاری غیرفعال است",
+      "upload_image": "بارگذاری تصویر",
+      "waiting": "لطفاً منتظر تکمیل فرایند جاری بمانید",
+      "not_support_image": "مدل فعلی از بارگذاری تصویر پشتیبانی نمی‌کند",
+      "click_to_upload": "برای بارگذاری کلیک کنید یا تصویر بچسبانید",
+      "figma_integration": "یکپارچه‌سازی Figma",
+      "figma_settings": "تنظیمات Figma",
+      "figma_url": "آدرس فایل Figma",
+      "figma_token": "توکن دسترسی Figma",
+      "enter_figma_url": "آدرس فایل Figma را وارد کنید",
+      "enter_figma_token": "توکن دسترسی Figma را وارد کنید",
+      "mcp_disabled": "ابزارهای MCP غیرفعال است",
+      "mcp_tools": "ابزارهای MCP",
+      "not_support_mcp": "مدل فعلی از ابزارهای MCP پشتیبانی نمی‌کند",
+      "click_to_use_mcp": "برای استفاده از ابزارهای MCP کلیک کنید"
+    },
+    "examples": {
+      "title": "می‌توانید این‌گونه از من بپرسید",
+      "prompts": {
+        "todo": "ساخت یک اپ فهرست کارها با React و Tailwind",
+        "blog": "ساخت یک وبلاگ ساده با Astro",
+        "cookie": "ساخت فرم رضایت کوکی با Material UI",
+        "game": "ساخت بازی Space Invaders",
+        "center": "چطور یک div را وسط‌چین کنم؟"
+      }
+    },
+    "loading": {
+      "generating": "هوش مصنوعی در حال تولید پاسخ است..."
+    },
+    "modePlaceholders": {
+      "chat": "این حالت گفتگو است. می‌توانید مستقیماً با هوش مصنوعی صحبت کنید و پاسخ دلخواه را دریافت کنید.",
+      "builder": "این حالت سازنده است که برای ساخت پروژه از طریق گفتگو استفاده می‌شود"
+    },
+    "optimizePrompt": {
+      "title": "بهینه‌سازی پرامپت",
+      "placeholder": "پرامپت خود را اینجا وارد کنید تا برای بهینه‌سازی کمکتان کنیم...",
+      "processing": "در حال پردازش...",
+      "cancel": "لغو",
+      "loading": "در حال تولید طرح: محتوا عبارت است از",
+      "design": "تولید طرح",
+      "confirm": "تأیید",
+      "button": "بهینه‌سازی پرامپت",
+      "error": "بهینه‌سازی پرامپت ناموفق بود:",
+      "designPlaceholder": "پرامپت خود را اینجا وارد کنید تا در تولید طرح کمکتان کنیم..."
+    },
+    "regenerate_incomplete": "لطفاً بررسی کنید کدام فایل‌ها آخرین بار تولید شده‌اند، بازسازی کنید و کدهای ناقص قبلی را ادامه دهید؛ نیازی به تولید دوباره فایل‌های تکمیل‌شده نیست"
+  },
+  "settings": {
+    "title": "تنظیمات",
+    "language": "زبان",
+    "general": "عمومی",
+    "Quota": "سهمیه",
+    "General": "عمومی",
+    "Language": "زبان",
+    "keyPlaceholder": "لطفاً کلید API خود را وارد کنید",
+    "save": "ذخیره",
+    "themeMode": "حالت پوسته",
+    "themeModeLight": "حالت روشن",
+    "themeModeDark": "حالت تیره",
+    "MCPServer": "سرور MCP",
+    "InvalidProxyUrl": "آدرس پروکسی نامعتبر است",
+    "mcp": {
+      "actions": "عملیات",
+      "active": "فعال",
+      "addError": "افزودن سرور ناموفق بود",
+      "addServer": "افزودن سرور",
+      "addSuccess": "سرور با موفقیت افزوده شد",
+      "args": "آرگومان‌ها",
+      "argsTooltip": "هر آرگومان در یک خط جدید",
+      "baseUrlTooltip": "آدرس پایه سرور راه‌دور",
+      "command": "دستور",
+      "commandRequired": "لطفاً یک دستور وارد کنید",
+      "config_description": "پیکربندی سرورهای Model Context Protocol",
+      "please_use_electron": "لطفاً https://we0.ai را باز کنید تا نسخه کلاینت را دانلود کنید",
+      "confirmDelete": "حذف سرور",
+      "confirmDeleteMessage": "آیا از حذف سرور مطمئن هستید؟",
+      "deleteError": "حذف سرور ناموفق بود",
+      "deleteSuccess": "سرور با موفقیت حذف شد",
+      "dependenciesInstall": "نصب وابستگی‌ها",
+      "dependenciesInstalling": "در حال نصب وابستگی‌ها...",
+      "description": "توضیحات",
+      "duplicateName": "سروری با این نام از قبل وجود دارد",
+      "editJson": "ویرایش JSON",
+      "editServer": "ویرایش سرور",
+      "env": "متغیرهای محیطی",
+      "envTooltip": "قالب: KEY=value، هر کدام در یک خط",
+      "findMore": "یافتن سرورهای MCP بیشتر",
+      "install": "نصب",
+      "installError": "نصب وابستگی‌ها ناموفق بود",
+      "installSuccess": "وابستگی‌ها با موفقیت نصب شدند",
+      "jsonFormatError": "خطای قالب JSON",
+      "jsonModeHint": "پیکربندی سرور MCP را به شکل JSON اینجا ویرایش کنید. پس از تغییر برای ذخیره روی تأیید کلیک کنید.",
+      "jsonSaveError": "ذخیره پیکربندی ناموفق بود",
+      "jsonSaveSuccess": "پیکربندی با موفقیت ذخیره شد",
+      "missingDependencies": "موجود نیست، لطفاً برای ادامه آن را نصب کنید.",
+      "name": "نام",
+      "nameRequired": "لطفاً نام سرور را وارد کنید",
+      "noServers": "هیچ سروری پیکربندی نشده است",
+      "unavailable": "نسخه وب فعلاً از MCP پشتیبانی نمی‌کند. لطفاً منتظر بمانید.",
+      "invoke_tool": "فراخوانی ابزار",
+      "invoke_tooling": "در حال فراخوانی ابزار",
+      "npx_list": {
+        "actions": "عملیات",
+        "desc": "جستجو و افزودن بسته‌های npm به‌عنوان سرور MCP",
+        "description": "توضیحات",
+        "no_packages": "بسته‌ای یافت نشد",
+        "npm": "NPM",
+        "package_name": "نام بسته",
+        "scope_placeholder": "اسکوپ npm را وارد کنید (مثلاً @your-org)",
+        "scope_required": "لطفاً اسکوپ npm را وارد کنید",
+        "search": "جستجو",
+        "search_error": "خطای جستجو",
+        "title": "فهرست بسته‌های NPX",
+        "usage": "استفاده",
+        "version": "نسخه"
+      },
+      "serverPlural": "سرورها",
+      "serverSingular": "سرور",
+      "title": "سرورهای MCP",
+      "toggleError": "تغییر وضعیت ناموفق بود",
+      "type": "نوع",
+      "updateError": "به‌روزرسانی سرور ناموفق بود",
+      "updateSuccess": "سرور با موفقیت به‌روزرسانی شد",
+      "url": "آدرس",
+      "invalidMcpFormat": "قالب پیکربندی MCP نامعتبر است"
+    },
+    "proxy": "تنظیمات پروکسی",
+    "noProxy": "بدون پروکسی",
+    "systemProxy": "پروکسی سیستم",
+    "customProxy": "پروکسی سفارشی",
+    "customProxyPlaceholder": "پیکربندی پروکسی را وارد کنید",
+    "proxyHint": "هر پیکربندی پروکسی باید در یک خط جدید باشد.\nقالب: protocol=proxy_address\nمثال:\nhttp=http://127.0.0.1:7890\nhttps=http://127.0.0.1:7890\nsocks5=socks5://127.0.0.1:7890",
+    "packageMirrors": "آینه‌های بسته",
+    "pythonMirror": "آینه پایتون",
+    "nodeMirror": "آینه Node",
+    "customMirror": "آینه سفارشی",
+    "customMirrorPlaceholder": "آدرس آینه سفارشی را وارد کنید",
+    "proxyApplied": "تنظیمات پروکسی با موفقیت اعمال شد",
+    "proxyError": "اعمال تنظیمات پروکسی ناموفق بود",
+    "unsupportedProxyProtocol": "پروتکل پروکسی پشتیبانی نمی‌شود. لطفاً از http، https، socks4 یا socks5 استفاده کنید",
+    "invalidProxyHost": "آدرس میزبان پروکسی نامعتبر است",
+    "invalidProxyPort": "شماره پورت پروکسی نامعتبر است (باید عددی بین ۱ تا ۶۵۵۳۵ باشد)",
+    "invalidProxyFormat": "قالب آدرس پروکسی نامعتبر است",
+    "proxyUrlRequired": "لطفاً یک آدرس پروکسی وارد کنید",
+    "socksPortRequired": "پروکسی SOCKS باید شماره پورت را مشخص کند",
+    "themeSystem": "پیروی از سیستم",
+    "backend": {
+      "enable": "فعال‌سازی بک‌اند (آزمایشی)",
+      "language": "زبان بک‌اند",
+      "database": {
+        "type": "نوع پایگاه‌داده",
+        "none": "هیچ‌کدام",
+        "url": "آدرس پایگاه‌داده",
+        "username": "نام کاربری پایگاه‌داده",
+        "password": "رمز عبور پایگاه‌داده"
+      }
+    }
+  },
+  "preview": {
+    "noserver": "هیچ سروری در حال اجرا نیست",
+    "wxminiPreview": "ابزار توسعه‌دهنده مینی‌برنامه وی‌چت را برای پیش‌نمایش باز کنید"
+  },
+  "editor": {
+    "editor": "ویرایشگر",
+    "preview": "پیش‌نمایش",
+    "apiTest": "تست API",
+    "search_in_files": "جستجو در فایل‌ها...",
+    "diff": "تفاوت"
+  },
+  "header": {
+    "download": "دانلود کد",
+    "deploy": "استقرار",
+    "deploying": "در حال استقرار...",
+    "deploySuccess": "استقرار موفق!",
+    "deployToCloud": "پروژه شما با موفقیت روی ابر مستقر شد",
+    "accessLink": "لینک دسترسی:",
+    "copy": "کپی",
+    "close": "بستن",
+    "visitSite": "بازدید از سایت",
+    "open_directory": "باز کردن پوشه",
+    "error": {
+      "open_directory": "باز کردن پوشه ناموفق بود",
+      "deploy_failed": "استقرار ناموفق بود، لطفاً بعداً دوباره تلاش کنید"
+    }
+  },
+  "explorer": {
+    "clear_all": "پاک کردن همه",
+    "explorer": "کاوشگر"
+  },
+  "sidebar": {
+    "start_new_chat": "شروع گفتگوی جدید",
+    "search": "جستجو",
+    "chat_history": "تاریخچه گفتگو",
+    "my_subscription": "اشتراک من",
+    "settings": "تنظیمات",
+    "contact_us": "تماس با ما",
+    "personal_plan": "طرح شخصی"
+  },
+  "usage": {
+    "usage": "میزان استفاده",
+    "monthly_usage": "سهمیه استفاده ماهانه",
+    "quota_used": "سهمیه مصرف‌شده",
+    "remaining": "باقی‌مانده",
+    "billing_cycle": "دوره صورت‌حساب",
+    "next_reset": "بازنشانی بعدی",
+    "days": "روز",
+    "type": "نوع",
+    "buy_quote": "خرید سهمیه بیشتر",
+    "personal_plan": "طرح شخصی",
+    "unlimited": "نامحدود"
+  },
+  "login": {
+    "guest": "مهمان",
+    "title": "لطفاً وارد شوید",
+    "click_to_login": "برای ورود کلیک کنید",
+    "AI_powered_development_platform": "پلتفرم توسعه مبتنی بر هوش مصنوعی",
+    "email": "ایمیل",
+    "password": "رمز عبور",
+    "sign_in": "ورود",
+    "signing_in": "در حال ورود...",
+    "Failed to fetch": "دریافت اطلاعات ناموفق بود",
+    "remember_me": "مرا به خاطر بسپار",
+    "forgot_password": "فراموشی رمز عبور",
+    "By_signing_in_you_agree_to_our": "با ورود، شما با موارد زیر موافقت می‌کنید",
+    "terms_of_service": "شرایط استفاده از خدمات",
+    "Invalid password": "رمز عبور نامعتبر است",
+    "privacy_policy": "سیاست حفظ حریم خصوصی",
+    "and": "و",
+    "need_an_account": "به یک حساب نیاز دارید",
+    "register": "ثبت‌نام",
+    "weChat": "وی‌چت",
+    "basic_information": "اطلاعات پایه، آواتار و غیره.",
+    "continue_with_wechat": "ادامه با وی‌چت",
+    "connecting": "در حال اتصال...",
+    "sign_up_with_wechat": "ثبت‌نام با وی‌چت",
+    "WeDev_will_access_the_following_GitHub_information": "WeDev به اطلاعات گیت‌هاب زیر دسترسی خواهد داشت",
+    "WeDev_will_access_the_following_wechat_information": "WeDev به اطلاعات وی‌چت زیر دسترسی خواهد داشت",
+    "basic_profile": "نمایه پایه",
+    "public_repositories": "مخازن عمومی",
+    "and_Gists": "و Gistها",
+    "continue_with_github": "ادامه با گیت‌هاب",
+    "chat_limit_reached": "به محدودیت گفتگو رسیدید",
+    "chat_limit_reached_tips": "برای ادامه گفتگو لطفاً وارد شوید",
+    "usage_limit_reached": "به محدودیت استفاده رسیدید",
+    "usage_limit_reached_tips": "به حداکثر میزان استفاده رسیده‌اید. برای ادامه، سهمیه اضافه کنید."
+  },
+  "register": {
+    "register_success": "ثبت‌نام موفق!",
+    "register_success_account": "یک ایمیل تأیید به صندوق پستی شما ارسال شد، لطفاً به‌موقع آن را تأیید کنید.",
+    "process_login": "ادامه به ورود",
+    "create_account": "حساب We0 خود را بسازید",
+    "creating_account": "در حال ساخت حساب...",
+    "create_account_button": "ساخت حساب",
+    "already_account": "از قبل حساب دارید؟"
+  },
+  "sketch": {
+    "title": "ویرایشگر Sketch",
+    "guide": {
+      "title": "راهنمای تبدیل طرح Sketch یا Figma به کد",
+      "uploadTitle": "طرح Sketch یا Figma خود را بارگذاری کنید",
+      "description": "کافیست طرح Sketch یا Figma خود را بارگذاری کنید تا به‌طور خودکار کد فرانت‌اند باکیفیت برایتان تولید کنیم.",
+      "startButton": "شروع تجربه D2C",
+      "supportText": "از قالب فایل .sketch یا .figma تا حجم ۱۰ مگابایت پشتیبانی می‌شود",
+      "slide0": {
+        "title": "ناحیه طرح را برای تولید انتخاب کنید",
+        "description": "پس از بارگذاری -> روی فایل در درخت سمت چپ یا روی ناحیه طرح کلیک کنید -> پیش‌نمایش در پایین سمت راست ظاهر می‌شود -> برای دریافت کد روی دکمه پایین سمت راست کلیک کنید"
+      },
+      "slide1": {
+        "title": "تولید خودکار کد باکیفیت",
+        "description": "لحظه‌ای صبر کنید تا موتور هوش مصنوعی ما طرح شما را تحلیل و کد فرانت‌اند دقیق تولید کند"
+      },
+      "slide2": {
+        "title": "پیش‌نمایش فوری",
+        "description": "کد تولیدشده را در عمل ببینید!!!"
+      }
+    },
+    "generating": "در حال تولید...",
+    "generate_success": "با موفقیت تولید شد",
+    "prompt": "1. در صورت امکان کامپوننت‌ها را بر اساس تصاویر کپسوله کنید؛ 2. برای تصاویر از لینک‌های blob استفاده کنید؛ 3. یک نسخه ۱:۱ از تصویر بسازید و به حاشیه‌ها، اندازه‌ها، فونت‌ها و پس‌زمینه‌ها در آرایه JSON توجه کنید! 4. از TypeScript استفاده کنید؛ 5. برای عناصر تکرارشونده در تصویر، در صورت امکان بدون شکستن استایل اصلی از کامپوننت استفاده کنید؛ 6. از استایل سرریز متن استفاده کنید، متن تک‌خطی/چندخطی را تشخیص دهید و در صورت سرریز با '...' کوتاه کنید تا زیبایی حفظ شود؛ 7. از تگ‌های <div> <span> <img> <a> <input> استفاده کنید و از <h1><h2> و غیره پرهیز کنید؛ 8. نام‌های CSS را ساده کنید و در صورت امکان چیدمان flex را به موقعیت‌دهی مطلق ترجیح دهید؛ 9. در صورت نیاز مشکلات z-index را رفع کنید؛ 10. فاصله‌گذاری دقیق را طبق داده‌های مرجع حفظ کنید. مهم: هیچ کدی را حذف نکنید!!!!",
+    "generate_failed": "تولید ناموفق بود",
+    "get_code": "دریافت کد",
+    "select_tech": "انتخاب پشته فناوری",
+    "tech": {
+      "react": "React با TypeScript و Tailwind",
+      "vue": "Vue3 با TypeScript و Tailwind",
+      "miniprogram": "مینی‌برنامه وی‌چت"
+    },
+    "prompts": {
+      "base": "لطفاً بر اساس طرح بارگذاری‌شده تولید کنید",
+      "react": "کد React با استفاده از TypeScript و Tailwind CSS، پروژه باید نقطه ورود شروع داشته باشد و اطمینان حاصل شود که پروژه اجرا می‌شود و کد مطابق بهترین شیوه‌ها و بهینه‌سازی عملکرد است.",
+      "vue": "کد Vue3 با استفاده از TypeScript و Composition API با استایل‌دهی Tailwind CSS و رعایت بهترین شیوه‌های Vue.",
+      "miniprogram": "کد مینی‌برنامه وی‌چت با استفاده از فریم‌ورک بومی و استایل‌دهی WXSS، با رعایت استانداردها و بهترین شیوه‌های توسعه مینی‌برنامه. برای رابط از واحد rpx استفاده کنید و در صورت وجود نوار وضعیت در طرح آن را حذف کنید. در نوشتن مینی‌برنامه به استایل و عرض توجه کنید"
+    }
+  },
+  "update": {
+    "version_update": "به‌روزرسانی نسخه",
+    "release_date": "تاریخ انتشار"
+  },
+  "weapi": {
+    "title": "تست API",
+    "edit": "ویرایش",
+    "save_changes": "ذخیره تغییرات",
+    "send_request": "ارسال درخواست",
+    "api_collection": "مجموعه API",
+    "request_failed": "درخواست ناموفق بود",
+    "api_saved": "API با موفقیت ذخیره شد",
+    "import_success": "فهرست API با موفقیت وارد شد",
+    "delete_api_title": "تأیید حذف API",
+    "delete_folder_title": "تأیید حذف پوشه",
+    "delete_api_confirm": "آیا از حذف API مطمئن هستید؟",
+    "delete_folder_confirm": "آیا از حذف پوشه و همه محتوای آن مطمئن هستید؟",
+    "new_api": "API جدید",
+    "new_folder": "پوشه جدید",
+    "add_api": "افزودن API",
+    "add_folder": "افزودن پوشه",
+    "import": "وارد کردن",
+    "export": "خروجی گرفتن",
+    "edit_item": "ویرایش {type}",
+    "add_item": "افزودن مورد جدید",
+    "item_type": "نوع",
+    "item_name": "نام",
+    "type_api": "API",
+    "type_folder": "پوشه",
+    "name_required": "لطفاً نام را وارد کنید",
+    "url_required": "لطفاً آدرس را وارد کنید",
+    "url": "آدرس",
+    "method": {
+      "GET": "GET",
+      "POST": "POST",
+      "PUT": "PUT",
+      "DELETE": "DELETE",
+      "PATCH": "PATCH",
+      "HEAD": "HEAD",
+      "OPTIONS": "OPTIONS"
+    }
+  },
+  "forgotPassword": {
+    "title": "بازنشانی رمز عبور",
+    "email": "آدرس ایمیل",
+    "emailPlaceholder": "ایمیل خود را وارد کنید",
+    "oldPassword": "رمز عبور قدیمی",
+    "oldPasswordPlaceholder": "رمز عبور قدیمی خود را وارد کنید",
+    "newPassword": "رمز عبور جدید",
+    "newPasswordPlaceholder": "رمز عبور جدید خود را وارد کنید",
+    "submit": "به‌روزرسانی رمز عبور",
+    "submitting": "در حال به‌روزرسانی...",
+    "backToLogin": "بازگشت به ورود",
+    "success": "رمز عبور با موفقیت به‌روزرسانی شد",
+    "error": {
+      "missingFields": "لطفاً همه فیلدها را پر کنید",
+      "userNotFound": "کاربر یافت نشد",
+      "invalidOldPassword": "رمز عبور قدیمی نامعتبر است",
+      "updateFailed": "به‌روزرسانی رمز عبور ناموفق بود"
+    }
+  }
+}

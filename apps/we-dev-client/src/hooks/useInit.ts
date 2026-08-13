@@ -81,20 +81,29 @@ const useInit = (): { isDarkMode: boolean } => {
             ""
         )
 
+        const applyDir = (lang: string) => {
+            const dir = lang === "fa" ? "rtl" : "ltr"
+            document.documentElement.setAttribute("dir", dir)
+            document.documentElement.setAttribute("lang", lang)
+        }
+
         const settingsConfig = JSON.parse(
             localStorage.getItem("settingsConfig") || "{}"
         )
         if (settingsConfig.language) {
             i18n.changeLanguage(settingsConfig.language)
+            applyDir(settingsConfig.language)
         } else {
-            // Get browser language settings
+            // Default to Persian; keep Chinese for zh browsers and English otherwise
             const browserLang = navigator.language.toLowerCase()
-            // If Chinese environment (including simplified and traditional), set to Chinese, otherwise set to English
-            const defaultLang = browserLang.startsWith("zh") ? "zh" : "en"
+            const defaultLang = browserLang.startsWith("zh") ? "zh" : "fa"
 
             i18n.changeLanguage(defaultLang)
+            applyDir(defaultLang)
             // Save to local settings
         }
+
+        i18n.on("languageChanged", applyDir)
 
         // Apply stored proxy settings (if any)
         if (window.electron && settingsConfig.proxyType) {
@@ -133,7 +142,10 @@ const useInit = (): { isDarkMode: boolean } => {
         }
         document.addEventListener("copy", callback)
 
-        return () => document.removeEventListener("copy", callback)
+        return () => {
+            document.removeEventListener("copy", callback)
+            i18n.off("languageChanged", applyDir)
+        }
     }, [])
 
 

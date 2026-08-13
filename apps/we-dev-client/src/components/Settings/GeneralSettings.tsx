@@ -187,7 +187,7 @@ export function GeneralSettings() {
       customPythonMirror: savedData.customPythonMirror || '',
       nodeMirror: savedData.nodeMirror || 'https://registry.npmjs.org/',
       customNodeMirror: savedData.customNodeMirror || '',
-      language: savedData.language || 'en'
+      language: savedData.language || 'fa'
     };
   });
 
@@ -577,6 +577,7 @@ export function GeneralSettings() {
               value={formData.language}
               onChange={(value) => handleLanguageChange(value)}
               options={[
+                { value: 'fa', label: 'فارسی' },
                 { value: 'en', label: 'English' },
                 { value: 'zh', label: '中文' }
               ]}
